@@ -9,7 +9,7 @@ export default function Footer() {
           
           <div className="flex gap-6">
             <a
-              href="https://github.com/BrininhoBru"
+              href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME || 'BrininhoBru'}`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sage-400 hover:text-mint-400 transition-colors"

@@ -29,7 +29,7 @@ export default function Projects() {
         
         const headers: HeadersInit = {};
         if (token) {
-          headers['Authorization'] = `token ${token}`;
+          headers['Authorization'] = `Bearer ${token}`;
         }
         
         const response = await fetch(
@@ -121,7 +121,7 @@ export default function Projects() {
                 </svg>
               </div>
               
-              <p className="text-sage-300 text-sm mb-4 line-clamp-2 min-h-[40px]">
+              <p className="text-sage-300 text-sm mb-4 overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
                 {repo.description || 'No description available'}
               </p>
               
@@ -162,7 +162,7 @@ export default function Projects() {
         
         <div className="text-center mt-12">
           <a
-            href="https://github.com/BrininhoBru"
+            href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME || 'BrininhoBru'}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-mint-500 hover:bg-mint-600 text-white rounded-lg transition-all transform hover:scale-105 shadow-lg"
