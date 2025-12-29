@@ -40,7 +40,22 @@ cd portfolio
 npm install
 ```
 
-3. Run the development server:
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
+
+Edit `.env.local` and update the GitHub username:
+```
+NEXT_PUBLIC_GITHUB_USERNAME=your_github_username
+```
+
+Optionally, add a GitHub token to increase API rate limits:
+```
+NEXT_PUBLIC_GITHUB_TOKEN=your_github_token
+```
+
+4. Run the development server:
 ```bash
 npm run dev
 ```
@@ -51,10 +66,16 @@ npm run dev
 
 ### Update GitHub Username
 
-In `src/components/Projects.tsx`, update the GitHub username in the API call:
+Update the `.env.local` file with your GitHub username:
 
-```typescript
-const response = await fetch('https://api.github.com/users/YOUR_USERNAME/repos?sort=updated&per_page=6');
+```bash
+NEXT_PUBLIC_GITHUB_USERNAME=YOUR_USERNAME
+```
+
+For better API rate limits (5000 requests/hour instead of 60), add a GitHub token:
+
+```bash
+NEXT_PUBLIC_GITHUB_TOKEN=your_github_token
 ```
 
 ### Modify Color Scheme

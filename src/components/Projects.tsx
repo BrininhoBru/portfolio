@@ -24,7 +24,18 @@ export default function Projects() {
     // Fetch repositories from GitHub API
     const fetchRepos = async () => {
       try {
-        const response = await fetch('https://api.github.com/users/BrininhoBru/repos?sort=updated&per_page=6');
+        const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME || 'BrininhoBru';
+        const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
+        
+        const headers: HeadersInit = {};
+        if (token) {
+          headers['Authorization'] = `token ${token}`;
+        }
+        
+        const response = await fetch(
+          `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`,
+          { headers }
+        );
         
         if (!response.ok) {
           throw new Error('Failed to fetch repositories');
