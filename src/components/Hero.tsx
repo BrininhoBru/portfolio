@@ -101,25 +101,25 @@ export default function Hero() {
       
       <div className="relative z-10 text-center px-6 animate-fade-in">
         <h1 className="text-6xl md:text-8xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-mint-400 via-sage-400 to-mint-300">
-          Hello, I'm a Developer
+          Oioii, aqui é o Bruno!
         </h1>
         <p className="text-xl md:text-2xl text-sage-200 mb-8 max-w-2xl mx-auto">
-          Crafting digital experiences with passion and precision
+          Crio experiências digitais com foco em qualidade, clareza técnica e atenção aos detalhes.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#projects"
             className="px-8 py-4 bg-mint-500 hover:bg-mint-600 text-white rounded-lg transition-all transform hover:scale-105 shadow-lg"
           >
-            View My Work
+            Veja meus projetos
           </a>
           <a
             href="#about"
             className="px-8 py-4 border-2 border-mint-500 text-mint-400 hover:bg-mint-500/10 rounded-lg transition-all"
           >
-            Learn More
+            Saiba mais sobre mim
           </a>
-        </div>
+        </div> */}
       </div>
 
       {/* Floating shapes */}
